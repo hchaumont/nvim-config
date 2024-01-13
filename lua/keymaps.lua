@@ -24,3 +24,6 @@ vim.keymap.set("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 
 -- Clear search with <esc>
 vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
+
+-- Toggles
+vim.keymap.set("n", "<leader>tw", ":set wrap!<cr>", { desc = "Toggle line wrap"})
