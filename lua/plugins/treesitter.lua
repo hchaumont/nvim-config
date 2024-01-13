@@ -9,6 +9,7 @@ return {
       sync_install = false,
       highlight = { enable = true },
       indent = { enable = true },  
+      -- Maybe enable textobjects module in the future
     })
   end
 }
