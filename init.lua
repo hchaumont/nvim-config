@@ -23,3 +23,6 @@ require("options")
 
 -- My keymaps
 require("keymaps")
+
+-- Configure LSP
+require("lsp-config")
