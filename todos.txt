@@ -1,3 +1,0 @@
-Plugins to consider adding
-- https://github.com/folke/zen-mode.nvim
-- https://github.com/lewis6991/gitsigns.nvim
