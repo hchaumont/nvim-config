@@ -1,5 +1,4 @@
 ## Todos
-- Set up completions
 
 ## Plugins to consider adding
 - [zen-mode](https://github.com/folke/zen-mode.nvim)
