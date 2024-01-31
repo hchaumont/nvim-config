@@ -26,3 +26,5 @@ require("keymaps")
 
 -- Configure LSP
 require("lsp-config")
+
+require("cmp-config")
