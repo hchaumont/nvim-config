@@ -55,11 +55,11 @@ local servers = {
   clangd = {},
   gopls = {},
   zls = {},
-  -- pyright = {},
+  pyright = {},
   -- rust_analyzer = {},
   -- tsserver = {},
   html = { filetypes = { 'html', 'twig', 'hbs'} },
-  java_language_server = {},
+  jdtls = {},
 
   lua_ls = {
     Lua = {
