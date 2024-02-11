@@ -1,5 +1,5 @@
 ## Todos
-- Set up neotree to replace netrw on startup.
+- Fix initial flash of netrw when neo-tree hijacks.
 - Customize snippet and completion config.
 
 ## Plugins to consider adding
