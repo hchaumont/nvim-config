@@ -9,5 +9,15 @@ return {
       ignore_focus = { 'neo-tree' },
       extensions = { 'lazy' }
     },
+    sections = {
+      lualine_c = {
+        {
+          'filename',
+          path = 1,
+          shorting_target = 40,
+        }
+      }
+    }
   },
 }
+
