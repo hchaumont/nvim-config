@@ -20,6 +20,7 @@ return  {
     -- Find 
     vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find file'})
     vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope find buffer'})
+    vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'Telescope find keymaps'})
     -- Search
     vim.keymap.set('n', '<leader>/', builtin.live_grep, { desc = 'Telescope search grep'})
     vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = 'Telescope search grep'})
