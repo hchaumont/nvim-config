@@ -1,6 +1,6 @@
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
   -- Helper function that lets us more easily define mappings specific for LSP related items.
   -- It sets the mode, buffer and description for us each time.
   local nmap = function(keys, func, desc)
@@ -8,6 +8,10 @@ local on_attach = function(_, bufnr)
       desc = 'LSP: ' .. desc
     end
     vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
+  end
+
+  if (client.name == 'zls') then
+    nmap('<leader>bb', ':!zig build<CR>', "Zig Build")
   end
 
   nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
