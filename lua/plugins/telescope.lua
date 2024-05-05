@@ -22,7 +22,7 @@ return  {
     vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope find buffer'})
     vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'Telescope find keymaps'})
     -- Search
-    vim.keymap.set('n', '<leader>/', builtin.live_grep, { desc = 'Telescope search grep'})
+    vim.keymap.set('n', '<leader>/', builtin.current_buffer_fuzzy_find, { desc = 'Telescope search grep'})
     vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = 'Telescope search grep'})
     vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Telescope search help'})
   end
