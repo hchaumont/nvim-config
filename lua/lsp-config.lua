@@ -82,7 +82,7 @@ require('mason-lspconfig').setup()
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
 local servers = {
-  clangd = {},
+  -- clangd = {},
   gopls = {},
   zls = {},
   pyright = {},
@@ -113,6 +113,7 @@ local mason_lspconfig = require 'mason-lspconfig'
 
 mason_lspconfig.setup {
   ensure_installed = vim.tbl_keys(servers),
+  automatic_installation = { exclude = { "clangd"} }
 }
 
 mason_lspconfig.setup_handlers {
@@ -124,4 +125,8 @@ mason_lspconfig.setup_handlers {
       filetypes = (servers[server_name] or {}).filetypes,
     }
   end,
+}
+require('lspconfig').clangd.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
 }
