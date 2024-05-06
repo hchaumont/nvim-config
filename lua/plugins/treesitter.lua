@@ -7,7 +7,7 @@ return {
 
     configs.setup({
       -- see :TSInstallInfo for the list of languages supported
-      ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html", "java", "zig", "markdown", "latex" },
+      ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html", "java", "zig", "markdown", "latex" , "toml"},
       sync_install = false,
       highlight = { enable = true },
       indent = { enable = true },
