@@ -12,6 +12,8 @@ local on_attach = function(client, bufnr)
 
   if (client.name == 'zls') then
     nmap('<leader>bb', ':!zig build<CR>', "Zig Build")
+    nmap('<leader>br', ':!zig run %<CR>', "Zig Run current file")
+    nmap('<leader>bt', ':!zig test %<CR>', "Zig Test current file")
   end
 
   nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
@@ -60,7 +62,7 @@ local on_attach = function(client, bufnr)
       group = vim.api.nvim_create_augroup('lsp-detach', { clear = true }),
       callback = function(event2)
         vim.lsp.buf.clear_references()
-        vim.api.nvim_clear_autocmds { group = 'kickstart-lsp-highlight', buffer = event2.buf }
+        vim.api.nvim_clear_autocmds { group = 'lsp-highlight', buffer = event2.buf }
       end,
     })
   end
