@@ -54,3 +54,5 @@ vim.o.splitright = true
 -- Set horizontal splits to go below current window
 vim.o.splitbelow = true
 
+-- Set the color column
+vim.o.colorcolumn = "80"
