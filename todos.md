@@ -7,4 +7,4 @@
 ## Plugins to consider adding
 - [ ] conform.nvim
 - [ ] trouble.nvim
-- [ ] ???
+- [ ] switch neodev to lazydev?
