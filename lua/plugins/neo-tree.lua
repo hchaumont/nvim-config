@@ -1,5 +1,11 @@
 -- Run :lua require("neo-tree").paste_default_config() to see the full default config
 local config = {
+  sources = {
+    "filesystem",
+    "buffers",
+    "git_status",
+    "document_symbols",
+  },
   close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
   event_handlers = {
     {
@@ -29,5 +35,6 @@ return {
     vim.keymap.set("n", "<leader>ef", ":Neotree filesystem toggle reveal left<CR>", { desc = "Neotree expolore filesystem"})
     vim.keymap.set("n", "<leader>eb", ":Neotree buffers toggle float<CR>", { desc = "Neotree expolore buffers"})
     vim.keymap.set("n", "<leader>eg", ":Neotree git_status toggle reveal float<CR>", { desc = "Neotree expolore git status"})
+    vim.keymap.set("n", "<leader>es", ":Neotree document_symbols toggle reveal left<CR>", { desc = "Neotree expolore git status"})
   end
 }
