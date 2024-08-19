@@ -17,11 +17,12 @@ return {
     pcall(require("telescope").load_extension, "fzf")
     -- Set bindings for some telescope pickers
     -- See https://github.com/nvim-telescope/telescope.nvim?tab=readme-ov-file#pickers
-    local builtin = require("telescope.builtin")
+    local builtin = require('telescope.builtin')
     -- Find
-    vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find file" })
-    vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope find buffer" })
-    vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Telescope find keymaps" })
+    vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find file'})
+    vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope find buffer'})
+    vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'Telescope find keymaps'})
+    vim.keymap.set('n', '<leader>fc', builtin.colorscheme, { desc = 'Telescope search colorscheme'})
     -- Search
     vim.keymap.set("n", "<leader>/", builtin.current_buffer_fuzzy_find, { desc = "Telescope grep buffer" })
     vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "Telescope search grep" })
