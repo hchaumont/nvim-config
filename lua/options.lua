@@ -6,6 +6,10 @@ vim.o.hlsearch = true
 
 -- Make line numbers default
 vim.wo.number = true
+vim.o.relativenumber = true
+
+-- Statusline already has mode
+vim.o.showmode = false
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
@@ -55,4 +59,4 @@ vim.o.splitright = true
 vim.o.splitbelow = true
 
 -- Set the color column
-vim.o.colorcolumn = "80"
+vim.o.colorcolumn = "80,100"
