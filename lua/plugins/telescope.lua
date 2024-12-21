@@ -25,5 +25,6 @@ return  {
     vim.keymap.set('n', '<leader>/', builtin.current_buffer_fuzzy_find, { desc = 'Telescope search grep'})
     vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = 'Telescope search grep'})
     vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Telescope search help'})
+    vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = 'Telescope search resume'})
   end
 }
