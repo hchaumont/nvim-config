@@ -57,3 +57,7 @@ require('mason-lspconfig').setup({
     end,
   },
 })
+
+require('lspconfig').clangd.setup {
+  capabilities = capabilities,
+}
