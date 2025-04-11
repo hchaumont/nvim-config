@@ -17,8 +17,8 @@ local servers = {
   gopls = {},
   zls = {},
   pyright = {},
-  -- rust_analyzer = {},
-  -- tsserver = {},
+  rust_analyzer = {},
+  ts_ls = {},
   html = { filetypes = { 'html', 'twig', 'hbs'} },
   jdtls = {},
 
