@@ -6,7 +6,7 @@ vim.o.hlsearch = true
 
 -- Make line numbers default
 vim.wo.number = true
-vim.o.relativenumber = true
+-- vim.o.relativenumber = true
 
 -- Statusline already has mode
 vim.o.showmode = false
