@@ -4,6 +4,6 @@
 - Set up DAP support
 
 ## Plugins to consider adding
-- [ ] conform.nvim
+- [x] conform.nvim
 - [ ] trouble.nvim
 - [x] switch neodev to lazydev?
