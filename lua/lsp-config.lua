@@ -30,6 +30,7 @@ local servers = {
       diagnostics = { disable = { 'missing-fields' } },
     },
   },
+  svelte = {},
 }
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
