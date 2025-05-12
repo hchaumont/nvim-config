@@ -20,4 +20,21 @@ vim.keymap.set("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
 
 -- Toggles
-vim.keymap.set("n", "<leader>tw", ":set wrap!<cr>", { desc = "Toggle line wrap"})
+vim.keymap.set("n", "<leader>tw", ":set wrap!<cr>", { desc = "Toggle line wrap" })
+
+-- Quickfix list diagnostics
+vim.keymap.set("n", "<leader>cd", function()
+	local qf_exists = false
+	for _, win in pairs(vim.fn.getwininfo()) do
+		if win.quickfix == 1 then
+			qf_exists = true
+		end
+	end
+	if qf_exists then
+		vim.cmd("cclose")
+	else
+		vim.diagnostic.setqflist()
+	end
+end, { desc = "Toggle diagnostics in quickfix list" })
+vim.keymap.set("n", "<leader>cp", "<cmd>cprevious<cr>", { desc = "Previous quickfix item" })
+vim.keymap.set("n", "<leader>cn", "<cmd>cnext<cr>", { desc = "Next quickfix item" })
