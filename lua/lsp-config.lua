@@ -30,9 +30,9 @@ local servers = {
   },
 }
 
--- nvim-cmp supports additional completion capabilities, so broadcast that to
+-- blink.cmp adds additional completion capabilities, so broadcast that to
 -- every server via the `*` wildcard config.
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local capabilities = require("blink.cmp").get_lsp_capabilities()
 vim.lsp.config("*", { capabilities = capabilities })
 
 -- Apply per-server settings, then enable them all. Server defaults (cmd,
