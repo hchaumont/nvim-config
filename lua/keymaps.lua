@@ -24,17 +24,17 @@ vim.keymap.set("n", "<leader>tw", ":set wrap!<cr>", { desc = "Toggle line wrap" 
 
 -- Quickfix list diagnostics
 vim.keymap.set("n", "<leader>cd", function()
-	local qf_exists = false
-	for _, win in pairs(vim.fn.getwininfo()) do
-		if win.quickfix == 1 then
-			qf_exists = true
-		end
-	end
-	if qf_exists then
-		vim.cmd("cclose")
-	else
-		vim.diagnostic.setqflist()
-	end
+  local qf_exists = false
+  for _, win in pairs(vim.fn.getwininfo()) do
+    if win.quickfix == 1 then
+      qf_exists = true
+    end
+  end
+  if qf_exists then
+    vim.cmd("cclose")
+  else
+    vim.diagnostic.setqflist()
+  end
 end, { desc = "Toggle diagnostics in quickfix list" })
 vim.keymap.set("n", "<leader>co", "<cmd>copen<cr>", { desc = "Open quickfix list" })
 vim.keymap.set("n", "<leader>cc", "<cmd>cclose<cr>", { desc = "Close quickfix list" })
