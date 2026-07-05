@@ -1,5 +1,12 @@
+vim.pack.add({
+  "https://github.com/nvim-lua/plenary.nvim",
+  "https://github.com/nvim-tree/nvim-web-devicons",
+  "https://github.com/MunifTanjim/nui.nvim",
+  { src = "https://github.com/nvim-neo-tree/neo-tree.nvim", version = "v3.x" },
+})
+
 -- Run :lua require("neo-tree").paste_default_config() to see the full default config
-local config = {
+require("neo-tree").setup({
   sources = {
     "filesystem",
     "buffers",
@@ -19,37 +26,9 @@ local config = {
   filesystem = {
     hijack_netrw_behavior = "open_current",
   },
-}
+})
 
-return {
-  "nvim-neo-tree/neo-tree.nvim",
-  branch = "v3.x",
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-tree/nvim-web-devicons",
-    "MunifTanjim/nui.nvim",
-  },
-  opts = config,
-  config = function(_, opts)
-    require("neo-tree").setup(opts)
-    vim.keymap.set(
-      "n",
-      "<leader>ef",
-      ":Neotree filesystem toggle reveal left<CR>",
-      { desc = "Neotree explore filesystem" }
-    )
-    vim.keymap.set("n", "<leader>eb", ":Neotree buffers toggle float<CR>", { desc = "Neotree explore buffers" })
-    vim.keymap.set(
-      "n",
-      "<leader>eg",
-      ":Neotree git_status toggle reveal float<CR>",
-      { desc = "Neotree explore git status" }
-    )
-    vim.keymap.set(
-      "n",
-      "<leader>es",
-      ":Neotree document_symbols toggle reveal left<CR>",
-      { desc = "Neotree explore git status" }
-    )
-  end,
-}
+vim.keymap.set("n", "<leader>ef", ":Neotree filesystem toggle reveal left<CR>", { desc = "Neotree explore filesystem" })
+vim.keymap.set("n", "<leader>eb", ":Neotree buffers toggle float<CR>", { desc = "Neotree explore buffers" })
+vim.keymap.set("n", "<leader>eg", ":Neotree git_status toggle reveal float<CR>", { desc = "Neotree explore git status" })
+vim.keymap.set("n", "<leader>es", ":Neotree document_symbols toggle reveal left<CR>", { desc = "Neotree explore symbols" })

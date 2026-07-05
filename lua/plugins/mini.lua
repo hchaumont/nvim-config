@@ -1,8 +1,4 @@
-return {
-  "echasnovski/mini.nvim",
-  version = "*",
-  config = function()
-    require("mini.pairs").setup()
-    require("mini.ai").setup({ n_lines = 500 })
-  end,
-}
+vim.pack.add({ "https://github.com/echasnovski/mini.nvim" })
+
+require("mini.pairs").setup()
+require("mini.ai").setup({ n_lines = 500 })
