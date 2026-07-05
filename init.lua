@@ -1,5 +1,5 @@
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- Make sure lazy is installed
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -27,5 +27,3 @@ require("keymaps")
 -- Configure LSP
 require("lsp-autocmd")
 require("lsp-config")
-
-require("cmp-config")

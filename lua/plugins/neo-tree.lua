@@ -13,7 +13,7 @@ local config = {
       handler = function(file_path)
         --auto close
         require("neo-tree.command").execute({ action = "close" })
-      end
+      end,
     },
   },
   filesystem = {
@@ -32,9 +32,24 @@ return {
   opts = config,
   config = function(_, opts)
     require("neo-tree").setup(opts)
-    vim.keymap.set("n", "<leader>ef", ":Neotree filesystem toggle reveal left<CR>", { desc = "Neotree expolore filesystem"})
-    vim.keymap.set("n", "<leader>eb", ":Neotree buffers toggle float<CR>", { desc = "Neotree expolore buffers"})
-    vim.keymap.set("n", "<leader>eg", ":Neotree git_status toggle reveal float<CR>", { desc = "Neotree expolore git status"})
-    vim.keymap.set("n", "<leader>es", ":Neotree document_symbols toggle reveal left<CR>", { desc = "Neotree expolore git status"})
-  end
+    vim.keymap.set(
+      "n",
+      "<leader>ef",
+      ":Neotree filesystem toggle reveal left<CR>",
+      { desc = "Neotree explore filesystem" }
+    )
+    vim.keymap.set("n", "<leader>eb", ":Neotree buffers toggle float<CR>", { desc = "Neotree explore buffers" })
+    vim.keymap.set(
+      "n",
+      "<leader>eg",
+      ":Neotree git_status toggle reveal float<CR>",
+      { desc = "Neotree explore git status" }
+    )
+    vim.keymap.set(
+      "n",
+      "<leader>es",
+      ":Neotree document_symbols toggle reveal left<CR>",
+      { desc = "Neotree explore git status" }
+    )
+  end,
 }

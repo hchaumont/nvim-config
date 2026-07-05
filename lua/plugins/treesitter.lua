@@ -1,33 +1,37 @@
 return {
   "nvim-treesitter/nvim-treesitter",
+  branch = "main",
+  lazy = false,
   build = ":TSUpdate",
   config = function()
-    -- Treesitter setup
-    local configs = require("nvim-treesitter.configs")
+    require("nvim-treesitter").install({
+      "c",
+      "lua",
+      "vim",
+      "vimdoc",
+      "query",
+      "elixir",
+      "heex",
+      "javascript",
+      "typescript",
+      "html",
+      "java",
+      "zig",
+      "markdown",
+      "markdown_inline",
+      "toml",
+      "svelte",
+    })
 
-    configs.setup({
-      -- see :TSInstallInfo for the list of languages supported
-      ensure_installed = {
-        "c",
-        "lua",
-        "vim",
-        "vimdoc",
-        "query",
-        "elixir",
-        "heex",
-        "javascript",
-        "typescript",
-        "html",
-        "java",
-        "zig",
-        "markdown",
-        "toml",
-        "svelte",
-      },
-      sync_install = false,
-      highlight = { enable = true },
-      indent = { enable = true },
-      -- Maybe enable textobjects module in the future
+    vim.api.nvim_create_autocmd("FileType", {
+      group = vim.api.nvim_create_augroup("treesitter-start", { clear = true }),
+      callback = function(args)
+        local buf = args.buf
+        local lang = vim.treesitter.language.get_lang(vim.bo[buf].filetype)
+        if lang and pcall(vim.treesitter.start, buf, lang) then
+          vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        end
+      end,
     })
   end,
 }

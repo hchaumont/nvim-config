@@ -6,6 +6,6 @@ return {
     -- refer to the configuration section below
   },
   config = function()
-    vim.keymap.set("n", "<leader>zm", ":ZenMode<CR>", { desc = "Zen mode"})
-  end
+    vim.keymap.set("n", "<leader>zm", ":ZenMode<CR>", { desc = "Zen mode" })
+  end,
 }
